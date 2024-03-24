@@ -1,29 +1,36 @@
-name: Python application
+name: Deploy
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches:
+      - main  # Set a branch to deploy
 
 jobs:
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
 
     - name: Set up Python 3.8
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v2
       with:
         python-version: 3.8
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flask
+        pip install -r requirements.txt
 
-    - name: Run app
+    - name: Run tests
       run: |
-        python main.py
+        # Add your test command here
+        # For example, if you're using pytest:
+        # pytest
+
+    - name: Deploy to Heroku
+      uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: "riyal-memeapp" #Must be unique in Heroku
+        heroku_email: "ayush1337@hotmail.com"
