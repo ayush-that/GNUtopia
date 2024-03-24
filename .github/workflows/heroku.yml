@@ -1,3 +1,0 @@
-              
-- name: Deploy to Heroku              
-  uses: AkhileshNS/heroku-deploy@v3.13.15
