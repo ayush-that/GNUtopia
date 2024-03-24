@@ -1,0 +1,14 @@
+body {
+  background-color: #070707;
+  color: #e8f1f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#meme-image {
+  max-height: 80vh;
+  object-fit: contain;
+}
