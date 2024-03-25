@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>memes dikha do</title>
+    <title>GNUtopia</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -16,22 +16,64 @@
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Hack:wght@400;700&display=swap"
       rel="stylesheet"
     />
-  </head>
-  <body style="font-family: 'IBM Plex Sans', sans-serif; color: #e8f1f2">
-    <img
-      id="meme-image"
-      class="max-h-screen object-contain md:max-h-80v lg:max-h-60v xl:max-h-40v"
-      src="your-image-source"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <p
-      id="refresh-btn"
-      class="mt-4 mb-4 text-white hover:text-blue-700 cursor-pointer text-center"
-    >
-      Refresh Meme
-    </p>
+  </head>
+  <body style="font-family: 'Hack', monospace; font-size: 14px">
+    <body style="font-family: 'Hack', monospace; font-size: 14px">
+      <nav
+        class="flex items-center justify-between flex-wrap bg-transparent p-6 mt-4"
+      >
+        <div class="flex items-center flex-shrink-0 text-white mr-6">
+          <i class="fab fa-linux mr-2"></i>
+          <span class="font-semibold text-xl tracking-tight">GNUtopia</span>
+        </div>
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+          <div class="text-sm lg:flex-grow">
+            <a
+              href="#home"
+              class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            >
+              Home
+            </a>
+            <a
+              href="#meme"
+              class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            >
+              Meme
+            </a>
+            <a
+              href="{{ url_for('static', filename='why.html') }}"
+              class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            >
+              Why?
+            </a>
+            <a
+              href="#about"
+              class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+            >
+              About Me
+            </a>
+          </div>
+        </div>
+      </nav>
+      <img
+        id="meme-image"
+        class="max-h-screen object-contain md:max-h-80v lg:max-h-60v xl:max-h-40v"
+        src="your-image-source"
+      />
+      <p
+        id="refresh-btn"
+        class="mt-4 mb-4 text-white hover:text-blue-700 cursor-pointer text-center"
+      >
+        Refresh Meme
+      </p>
+    </body>
     <hr class="border-2 border-t border-white w-1/2 mx-auto" />
     <footer class="mt-4 text-center text-white">
       Made with 🧠 by Ayush<br />

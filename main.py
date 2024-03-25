@@ -11,7 +11,7 @@ def index():
 
 @app.route('/meme')
 def get_meme():
-    subreddit = 'memes'  # You can change this to any subreddit you prefer
+    subreddit = 'ProgrammerHumor'
     url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=100'
     headers = {'User-Agent': 'Mozilla/5.0'}
     response = requests.get(url, headers=headers)
