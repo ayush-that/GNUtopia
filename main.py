@@ -13,7 +13,7 @@ def index():
 def get_meme():
     subreddit = 'ProgrammerHumor'
     url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=100'
-    headers = {'User-Agent': 'Mozilla/5.0'}
+    headers = {'User-Agent': 'Mozilla/5.0 by /u/BiharanInDelhi'}
     response = requests.get(url, headers=headers)
     data = response.json()
     memes = [post['data']['url'] for post in data['data']['children'] if 'jpg' in post['data']['url'] or 'png' in post['data']['url']]
