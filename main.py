@@ -15,6 +15,9 @@ def get_meme():
     url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=100'
     headers = {'User-Agent': 'Mozilla/5.0 by /u/BiharanInDelhi'}
     response = requests.get(url, headers=headers)
+    if response.status_code != 200:
+        app.logger.error('Failed to fetch meme: status code %s, response body: %s', response.status_code, response.text)
+        return jsonify({'error': 'An error occurred while fetching the meme'}), 500
     data = response.json()
     memes = [post['data']['url'] for post in data['data']['children'] if 'jpg' in post['data']['url'] or 'png' in post['data']['url']]
     if memes:
